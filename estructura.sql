@@ -1,6 +1,9 @@
 -- Active: 1748963402291@@127.0.0.1@3307@EXERCISE
 -- tabla de clientes --
 
+
+-- Crear tablas
+
 CREATE TABLE `cliente`(
     `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     `nombre` VARCHAR(100) NOT NULL,
@@ -17,8 +20,8 @@ CREATE TABLE `producto`(
 );
 
 CREATE TABLE `combo`(
-    `id` INT NOT NULL PRIMARY KEY,
-    `nombre` VARCHAR(100) NOT NULL UNIQUE,
+    `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `nombre` VARCHAR(100) NOT NULL,
     `precio` DECIMAL(10, 2) NOT NULL
 );
 
@@ -128,6 +131,6 @@ ALTER TABLE
 
 ALTER TABLE
     `producto` ADD CONSTRAINT `producto_tipo_producto_id` FOREIGN KEY(`tipo_producto_id`) REFERENCES `tipo_producto`(`id`);
-    
+
 ALTER TABLE
     `factura` ADD CONSTRAINT `factura_pedido_id` FOREIGN KEY(`pedido_id`) REFERENCES `pedido`(`id`);
